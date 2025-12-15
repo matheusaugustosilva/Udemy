@@ -1,0 +1,5 @@
+const global = require('./global')
+require('./global')
+console.log(MinhaApp.nome)
+console.log(MinhaApp.saudacao())
+console.log(global.nome)
