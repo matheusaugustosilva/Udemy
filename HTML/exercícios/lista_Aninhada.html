@@ -1,17 +1,17 @@
 <h1>Projeto</h1>
 <ul class="tree">
-    <li>backend
+    <li > <span >backend </span>
         <ul>
-            <li>
-                app
+            <li >
+                <span>app</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
                     <li>venda.js</li >
                 </ul>
             </li>
-        <li>
-            config
+        <li >
+            <span>config</span>
             <ul>
               <li>banco.js</li>
               <li>rotas.js</li>
@@ -20,11 +20,11 @@
         </li>
         </ul>
     </li>
-    <li>
-        frontend 
+    <li >
+        <span>frontend </span>
             <ul>
-                <li>
-                    public
+                <li >
+                   <span> public </span>
                         <ul>
                             <li>app.css</li>
                             <li>app.js</li>
@@ -36,3 +36,13 @@
 </ul>
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+document.querySelectorAll("api").forEach(clique => {
+    clique.click = function(evento){
+        const ul = clique.nextElementSibling
+        console.log(ul)
+    }
+})
+
+</script>

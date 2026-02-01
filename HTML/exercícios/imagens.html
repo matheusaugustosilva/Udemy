@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Imagens</title>
+</head>
+<body>
+  <div wm-slider>
+  <p>
+  <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+    alt="Muro da Cidade" 
+    width ="513" height="342"
+    title="Muro da cidade por Tarso Bessa>"
+  </p>
+    <!--alt eh propriedade alternativa para caso a imagem n seja encontrada-->
+    
+    <p>
+      <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Into Cod3r" height="342">
+      
+    </p>
+    <p class="circular">
+      <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt= "Rio de Janeiro" height="342">
+    </p>
+   
+    <p class="texto">
+      <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="Avatar" height="50" align="left">
+      Texto adkfjadofjaodjfowmnaflsmdaknfn kfadnfkandkfakf ikfadnfkadn iafnfakdnfkad 
+    fafjfjaefafa fkamckamck   kfnqeakfjakfakfnkfan      
+    </p>
+    <p class="cidade"></p>
+    <p>
+      <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+          media="(min-width: 600px)">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png">
+        
+      </picture>
+    </p>
+    </div>
+     <style>
+    
+    p{
+      position: absolute; 
+      display:none;
+    }
+    .circular{
+      width: 513px;
+      background-color: #444;
+      
+    }
+    .texto{
+      width:400px;
+      
+    }
+    .texto img {
+      margin-right: 10px;
+    }
+    .cidade{
+      width:513px;
+      height:342px;
+      background-image:url("http://files.cod3r.com.br/curso-web/imagem4.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size:200%;
+      
+    }
+    </style>
+    <script>
+     function andar(elem,inc, fim, passo, callback){
+      const novoinicio = inc - passo
+       if(novoinicio >= fim){
+         elem.style.left = novoinicio + "px"
+         setTimeout(() => andar(elem, novoinicio,fim,passo,callback), 7)
+       }else{
+         callback()
+       }
+     }
+    /*const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    andar(p, 1500, -520, 5, () => {
+      console.log("Terminou!!!")
+    })*/
+    
+   
+    function slider() {
+      const elementos = document.querySelectorAll('[wm-slider] > p')
+      //querySelector faz uma nodelist e n um array, logo vou transformalo em um array
+      const slides = Array.from(elementos)
+      exibirSlide(slides,slides[0])
+    }
+    
+     function exibirSlide(slides,slide) {
+      slide.style.display = "block" // permite eu ver o slide
+      
+       const inicio = innerWidth // me da a largura da pagina 
+      const fim = -slide.clientWidth
+      
+      
+slide.style.left = inicio + "px"
+       
+      
+      andar(slide, inicio, fim, 5, () => {
+         slide.style.display = "none"  //Coloquei para n ver o slide apos acabar
+        exibirSlide(slides, getProximo(slides, slide))
+      })
+     }
+      function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+      }
+      
+    slider()
+    </script>
+</body>
+</html>

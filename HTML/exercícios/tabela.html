@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Tabela</title>
+</head>
+<body>
+  <!--Adcionar o arquivo dentro da  pasta exercicios e adcionar o arquivo no index.html-->
+  <table> 
+    <caption> Produtos</caption>
+    <thead>
+      <!--thead para definir a area do cabeçalho da tabela-->
+      <tr>
+        <!--tr(table rool) para definir uma linha no cabeçalho-->
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--Para definir o corpo da tabela-->
+      <tr>
+        <td><!--Table data -->Ipad</td>
+        <td>3289,00</td>
+        <td>5</td>
+        <td>16445,00</td>
+      </tr>
+      <tr>
+        <td>Samsung S9</td>
+        <th>2649,00</th>
+        <td>8</td>
+        <td>21192,00</td>
+        
+      </tr> 
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total <!--colspan para um td ocupar mais de um espaço--></td>
+        <td>37637,00</td>
+      </tr>
+    </tfoot>
+  </table>
+  <style>
+  table{
+    border-collapse:collapse;
+    
+  }
+  th,td {
+    padding:10px;
+  }
+  thead tr {
+    border-bottom: solid 3px #444;
+  }
+  tbody tr:hover{
+    background-color: #dedede;
+    /*houver eh clique do mouse 
+    OBS: qnd tem virgula significa que esta nos dois, quando nao tem quer dizer que entrei em um e depois no outro 
+    entrei no tbody e dps no tr 
+    */
+  }
+  tfoot{
+    background-color: #444;
+    color:#fff;
+    font-weight:bold;
+  }
+  </style>
+  
+</body>
+</html>
