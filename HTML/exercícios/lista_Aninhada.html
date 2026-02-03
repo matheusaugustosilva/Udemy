@@ -1,9 +1,9 @@
 <h1>Projeto</h1>
 <ul class="tree">
-    <li > <span >backend </span>
+    <li > <span wm-folder>backend </span>
         <ul>
             <li >
-                <span>app</span>
+                <span wm-folder>app</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -11,7 +11,7 @@
                 </ul>
             </li>
         <li >
-            <span>config</span>
+            <span wm-folder>config</span>
             <ul>
               <li>banco.js</li>
               <li>rotas.js</li>
@@ -21,10 +21,10 @@
         </ul>
     </li>
     <li >
-        <span>frontend </span>
+        <span wm-folder>frontend </span>
             <ul>
                 <li >
-                   <span> public </span>
+                   <span wm-folder> public </span>
                         <ul>
                             <li>app.css</li>
                             <li>app.js</li>
@@ -38,11 +38,12 @@
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 
 <script>
-document.querySelectorAll("api").forEach(clique => {
-    clique.click = function(evento){
-        const ul = clique.nextElementSibling
-        console.log(ul)
-    }
-})
+    document.querySelectorAll("[wm-folder]").forEach((folder) => {
+        folder.onclick = function(evento){
+            const ul = folder.nextElementSibling //pega o proximo elemento dps de folder que é oq tem a tag wm-folder
+            const disp = ul.style.display 
+            ul.style.display = disp === "none"? 'block': 'none'
+        }
+    })
 
 </script>
