@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        body{
+            font-family: monospace;
+            font-size:40px; 
+            border: solid 5px red;
+            padding: 50px; /* border e padding sao propriedades que nao sao herdadas automaticamente */
+            margin: 0;
+            /* padding: 50px 10px aplica 50 encima e embaixo e 10 dos lados */
+            /* padding: 10px 20px 30px 40px aplica encima, direita, baixo e esquerda */
+        }
+        div{
+            border: inherit; /* serve para dizer que a border de div sera herdada */
+            padding: inherit;
+        
+        }
     </style>
 </head>
 
