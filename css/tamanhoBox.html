@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * {
+            box-sizing: border-box; /* diz que a propriedade(ex width) vai tratar como tudo se relaciona(ex conteudo, padding, margin, etc) */
+            
+        }
         body {
             font-size: 45px;
+            margin: 0;
+        }
+
+        div{ 
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /* box-sizing: content-box diz que a propriedade vai tratar apenas do conteudo */
+            
         }
     </style>
 </head>
