@@ -5,7 +5,28 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+       .unidades-absolutas{
+        position: absolute; /* n é por isso que se chama unidade absoluta, em UA se usam px, cm, mm */
+        font-size: 40px;
+        padding: 20px;
+        border: solid 5px #222;
+        margin: 30px;
+        width: 4cm; /* Pouco usada */
+        height: 20mm; /* pouco usada */
+        top: 150px;
+        left: 200px;
+       }
+       .unidades-relativas{
+        position: absolute;
+        font-size: 4em; /* 4x o tamnho da fontel, fontes relativas são boas práticas */
+        padding: 5%;
+        border: solid 1vw #222; /* vw representa 1/100 da largura */
+        margin: .8;
+        height: 15vh;
+        bottom: 5%;
+        right: 5%;
+
+       }
     </style>
 </head>
 
