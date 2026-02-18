@@ -6,7 +6,22 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big{font-size: 1.5em;}
+        .flex-container{
+            display: flex; /* utilizo flex para mexer em um elemento de forma unidimensional(vertical ou horizontal ) */
+            flex-direction: column;
+            flex-direction: row;
+            width: 50%;
+            flex-wrap: wrap; /* respeita a width definida e quebra para  outra linha */
+            height: 200px;
+            flex-flow: column wrap; /* mexo no direction e no wrap */
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center; /* serve para eu falar como o  conteudo sera distribuido  */
+            justify-content: space-around;
+            justify-content: space-between  ;
+        }
     </style>
 </head>
 
