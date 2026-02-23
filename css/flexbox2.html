@@ -6,7 +6,45 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+
+     
+    .flex-container div{
+         box-sizing: border-box;
+         margin: 0;
+     }
+     .flex-container{
+        display: flex;
+        height: 300px;
+        width: 600px;
+     
+     }
+     .flex-container div:nth-child(3) {
+        /* vou aplicar uma propriedade ao terceiro filho */
+        background-color: indianred;
+        order: 1; /* todos os elementos tem peso 0 , quanto maior a ordem, mais na frente ele é mostrado*/
+        order: 0;
+        order: -1;
+        align-self: center;
+        align-self: flex-end;
+        align-self: flex-start;
+        align-self: stretch; /* valor default */  
+     }
+     .flex-container div{
+         width: 100px;
+         flex-grow: 0; /* vou mexer no elemento para ele crescer da forma que eu queira */
+         flex-grow: 1; /* cad qa slot tem 100px, e o total tem 600(600-400 = 200), dei importancia de 1 pra cada slot, entao como sao 4 slots, fica 200/4 = cresceu 50px */
+     }
+     .flex-container div:nth-child(1){
+        flex-grow: 2 /* vai pegar o primeiro elemento definido na div e n o visualmente */
+        /* 600-400 = 200, divido por 5 pq um elemento agora vale 2 200/5 = 40, a cada 1 grow, cresce 40 */
+     }
+     /* .flex-container{
+        width: 300px;
+        flex-shrink: 1;  encolher, usa a mesma lógica do ultimo 
+     }
+     .flex-container div:nth-child(1){
+        flex-shrink: 5;
+     } */
     </style>
 </head>
 

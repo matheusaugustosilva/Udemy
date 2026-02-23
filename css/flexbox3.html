@@ -6,7 +6,28 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+     .flex-container div{
+        box-sizing: border-box;
+        margin: 0;
+     }
+     .flex-container{
+        display: flex;
+        flex-direction: row;
+     }
+     .flex-container div {
+        flex-basis: 100px; /* propriedade para definir  o tamnho do flex item de acordo com o main axis*/
+        width: 200px; /* não mudou oq o flex-basis eh prioridade encima do width */
+    }
+    .flex-container div:nth-child(4){
+        flex: 3 6 100px ; /* grow shirink basis*/
+    }
+    .flex-container{
+        width: 600px;
+    }
+    /* justify-content mexe no main axis */
+    /* aling-itens mexe no cross axis */
+    
+        
     </style>
 </head>
 
