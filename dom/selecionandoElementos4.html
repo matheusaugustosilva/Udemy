@@ -22,7 +22,34 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log(){
+            console.log(this)
+        }
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log 
+        NodeList.prototype.log = log
+        Node.prototype.log = log // fiz tudo isso apenas para facilitar o console.log
+
+        const lista = document.querySelector("div ul")
+        lista.parentNode.log() //Pego o elemento pai e dou console.log
+        lista.childNodes.log() // mostra 4 text pq tem espaco 
+        
+        const primeiro  = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()
+        
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()
+
+        lista.children.log()
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll("div ul li").log() //ideal pq pego aquilo que quero e n fico navegando por filho e paren
+        
     </script>
 </body>
 
