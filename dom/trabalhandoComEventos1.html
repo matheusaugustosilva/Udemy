@@ -9,9 +9,22 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+       <!--  onclick="navegarEm5s(event)" -->
+        <a esperar-um-pouco href="https://google.com.br" >Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e){
+            e.preventDefault() //previnir que o comportamento padrao ocorra
+            console.log("Saindo em 5s...")
+            setTimeout(() => {
+                const link = e.target // pegue o elemento que foi clicado(a)
+                window.location.href = link.href // <a> possui prioridade então uso href 
+            },5000) //window.location controla a url do navegador
+        }
+
+       /*  const a = document.querySelector('a')
+        a.onclick = navegarEm5s */
+        const a = document.querySelector('[esperar-um-pouco]') //atributo personalizado pra deixar claro no html que vou utilizar uma fun em js
+        a.onclick = navegarEm5s
     </script>
 </body>

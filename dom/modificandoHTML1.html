@@ -9,7 +9,36 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector("body")
+        const div1 = document.createElement('div') //criei uma div 
+        div1.classList.add("destaque") //criei uma class e adcionei na div
+        div1.innerHTML = "Primeiro"   // criei conteúdo para div
+
+        const div2 = document.createElement("div")
+        div2.setAttribute("wm-atributo", "valor")
+        div2.innerHTML = "Segundo"
+
+        const p = document.createElement("p")
+        p.innerHTML = "terceiro"
+
+        const div3 = document.createElement("div")
+        div3.appendChild(p) // adcionar um filho dentro de div
+
+        const h1 = document.createElement("h1")
+        h1.innerHTML = "Teste"
+        h1.style.color = "#158015"
+        body.appendChild(h1)
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode("Antes...") // Crei um texto
+        div3.insertBefore(texto,div3.childNodes[0]) // div que quero adcionar o novo elemento, passo o filho e passo a posição que quero inserir ]
+
+        const div4 = div3.cloneNode(true) // deep true copia os filho e false n copia os filhos
+        body.appendChild(div4)
+
+        body.removeChild(div3) // o 3 foi removido mas a cor manteve pq o css está colocando as cores pela ordem        
     </script>
 </body>
 
