@@ -31,6 +31,20 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        //evitar um submit de um formulário 
+            const submit = document.querySelector('[wm-submit]')
+            submit.onclick = function (e) {
+                e.preventDefault()
+                const form = e.target.parentNode
+                const formdata = new FormData(form) // formData pega os dados do formulário e parentNode vai pegar pai do elemento
+                formdata.append('ajax',true)
+                console.log(formdata.get('q'))
+                console.log(formdata.has('hl'))
+
+                for(let dado of formdata){
+                    console.log(dado)
+                }
+                
+            }
     </script>
 </body>
