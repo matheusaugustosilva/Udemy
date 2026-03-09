@@ -6,7 +6,7 @@ const app = express()
 app.use(express.static('.'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-const storage = multer.disStorage({
+const storage = multer.diskStorage({
     destination: function(req,file,callback){
         callback(null, './upload')
     },
@@ -34,4 +34,15 @@ app.post('/formulario', (req, resp) => {
     })
 })
 
-app.listen(8080, () => console.log("Executando..."))
+app.get('/parOuImpar', (req, res) => {
+    // req.body 
+    // req.query
+    // req.params 
+    // sao forma de receber dados
+    const par = parseInt(req.query.numero) % 2 === 0
+    res.send({
+        resultado: par ? 'par' : "impar"
+    })
+})
+
+app.listen(8081, () => console.log("Executando..."))
