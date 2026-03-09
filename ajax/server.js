@@ -3,7 +3,10 @@ const express = require("express")
 const multer = require('multer')
 const app = express()
 
-const storage = multer.diskStorage({
+app.use(express.static('.'))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+const storage = multer.disStorage({
     destination: function(req,file,callback){
         callback(null, './upload')
     },
@@ -24,7 +27,11 @@ app.post('./upload', (req,res ) => {
     })
 })
 
-app.use(express.static('.'))
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.post('/formulario', (req, resp) => {
+    resp.send({
+        ...req.body, 
+        id: 1
+    })
+})
+
 app.listen(8080, () => console.log("Executando..."))

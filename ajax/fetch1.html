@@ -12,7 +12,7 @@
 
     <script>
         const url = "dados/estados.json"
-        fetch(url)
+        fetch(url) //fetch retorna uma promisse 
             .then(resp => resp.json())
             .then(estados => {
                 const itens = estados.reduce(
